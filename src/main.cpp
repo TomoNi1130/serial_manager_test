@@ -5,7 +5,7 @@
 
 BufferedSerial pc(USBTX, USBRX, 115200);  // PCとの通信に使用するシリアルポート
 
-SerialManager serial(pc, LED1, BUTTON1);  // シリアルマネージャのインスタンスを作成
+serial_manager::SerialManager serial(pc, LED1, BUTTON1);  // シリアルマネージャのインスタンスを作成
 // SerialManager serial(pc,3,LED1,BUTTON1); //初期IDの指定
 // SerialManager serial(pc, 3);  // シリアルマネージャのインスタンスを作成(ID表示機能なし)
 

@@ -8,6 +8,8 @@
 #include "mbed.h"
 #include "stm32f4xx_hal.h"
 
+namespace serial_manager {
+
 namespace config {
 const uint8_t FLOAT_HEADER = 0x01;
 const uint8_t BOOL_HAEDER = 0x02;
@@ -224,5 +226,7 @@ std::vector<uint8_t> SerialManager::cobs_encode(const std::vector<T>& input) {
 
   return encoded;
 }
+
+}  // namespace serial_manager
 
 #endif  // SERIAL_MANAGER_HPP

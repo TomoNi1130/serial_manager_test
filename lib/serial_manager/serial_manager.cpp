@@ -1,5 +1,7 @@
 #include "serial_manager.hpp"
 
+namespace serial_manager {
+
 uint8_t SerialManager::serial_id = 0;
 
 SerialManager::SerialManager(BufferedSerial& serial, uint8_t id) : men_serial(serial), state_(STANBY), ShowIDPin(LED1), ChangeIDPin(BUTTON1) {
@@ -298,4 +300,6 @@ uint8_t SerialManager::load_id_from_backup() {
   HAL_PWR_EnableBkUpAccess();
   __HAL_RCC_RTC_ENABLE();
   return RTC->BKP0R & 0xFF;
+}
+
 }
